@@ -54,7 +54,7 @@ def money_earned(consumer_money, consumer_order):
         return drink_cost
     else:
         print("Sorry that's not enough money. Money refunded.")
-        return 1
+        return False
 
 
 def report(resource_remain, total_revenue):
@@ -83,7 +83,7 @@ def start_machine():
             if ingredient_adequacy == 0:
                 given_money = how_much_money_given()
                 is_money_enough = money_earned(given_money, drink)
-                if is_money_enough != 1:
+                if is_money_enough:
                     revenue += is_money_enough
                     for ingredient in MENU[drink]["ingredients"]:
                         resources[ingredient] -= MENU[drink]["ingredients"][ingredient]
