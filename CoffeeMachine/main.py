@@ -27,10 +27,6 @@ MENU = {
 }
 
 
-def order():
-    return input("What would you like? (espresso/latte/cappuccino): ")
-
-
 def ingredient_checker(which_drink, which_resources):
     for ingredient in MENU[which_drink]["ingredients"]:
         if MENU[which_drink]["ingredients"][ingredient] > which_resources[ingredient]:
@@ -77,7 +73,7 @@ def start_machine():
         "coffee": 100,
     }
     while keep_ordering:
-        drink = order()
+        drink = input("What would you like? (espresso/latte/cappuccino): ")
         if drink == "report":
             report(resources, revenue)
         elif drink == "off":
