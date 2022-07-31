@@ -31,9 +31,9 @@ def ingredient_checker(which_drink, which_resources):
     for ingredient in MENU[which_drink]["ingredients"]:
         if MENU[which_drink]["ingredients"][ingredient] > which_resources[ingredient]:
             print(f"Sorry there is no enough {ingredient}.")
-            return 1
+            return False
         else:
-            return 0
+            return True
 
 
 def how_much_money_given():
@@ -80,7 +80,7 @@ def start_machine():
             keep_ordering = False
         else:
             ingredient_adequacy = ingredient_checker(drink, resources)
-            if ingredient_adequacy == 0:
+            if ingredient_adequacy:
                 given_money = how_much_money_given()
                 is_money_enough = money_earned(given_money, drink)
                 if is_money_enough:
