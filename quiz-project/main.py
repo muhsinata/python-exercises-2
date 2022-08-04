@@ -1,14 +1,14 @@
 from data import question_data
 from question_model import Question
+from quiz_brain import QuizBrain
 
-score = 0
-number_of_question = 0
-for question in question_data:
-    question = Question(question["text"], question["answer"].lower())
-    print(question.text)
-    answer = input("True or False: ").lower()
-    number_of_question += 1
-    if answer == question.answer:
-        score += 1
-    print(f"Success: {score}/{number_of_question}")
+question_bank = []
 
+for question_dictionary in question_data:
+    question_obj = Question(question_dictionary["text"], question_dictionary["answer"].lower())
+    question_bank.append(question_obj)
+
+quiz = QuizBrain(question_bank)
+
+while quiz.still_has_questions():
+    quiz.current_question()
