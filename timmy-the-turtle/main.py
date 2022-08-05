@@ -1,12 +1,12 @@
-from turtle import Turtle, Screen
+import turtle as t
 
-tim = Turtle()
-tim.color("PeachPuff")
+tim = t.Turtle()
 tim.shape("turtle")
 
-for _ in range(4):
-    tim.forward(100)
-    tim.right(90)
+for sides in range(3, 10):
+    for times in range(sides):
+        tim.forward(100)
+        tim.right(360/sides)
 
 
 
@@ -14,7 +14,5 @@ for _ in range(4):
 
 
 
-
-
-screen = Screen()
+screen = t.Screen()
 screen.exitonclick()
