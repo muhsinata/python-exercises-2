@@ -13,11 +13,18 @@ def move_backward():
 
 
 def turn_right():
-    tim.right(5)
+    tim.right(10)
 
 
 def turn_left():
-    tim.left(5)
+    tim.left(10)
+
+
+def clear():
+    tim.clear()
+    tim.penup()
+    tim.home()
+    tim.pendown()
 
 
 screen.listen()
@@ -25,5 +32,6 @@ t.onkey(move_forward, "w")
 t.onkey(move_backward, "s")
 t.onkey(turn_right, "d")
 t.onkey(turn_left, "a")
+t.onkey(clear, "c")
 
 screen.exitonclick()
