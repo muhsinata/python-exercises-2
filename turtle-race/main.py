@@ -22,22 +22,29 @@ for turtle_num in range(6):
 race_continues = True
 
 winners = []
+winner_colors = []
 
-while race_continues:
-    for turtle in turtles:
-        turtle.forward(random.randint(1, 10))
-    for turtle in turtles:
-        if turtle.xcor() >= 215:
-            winners.append(turtle)
-    if len(winners) > 0:
-        race_continues = False
 
-for winner in range(len(winners)):
-    print(f"Winner{winner + 1}: {list(winners[winner].color())[winner]} turtle.")
-    if list(winners[winner].color())[winner] == user_bet:
+def bet_result():
+    if user_bet in winner_colors:
         print("You win the bet!")
     else:
         print("You lost the bet.")
 
 
+while race_continues:
+    for turtle in turtles:
+        turtle.forward(random.randint(1, 10))
+    for turtle in turtles:
+        if turtle.xcor() >= 220:
+            winners.append(turtle)
+    if len(winners) > 0:
+        race_continues = False
+        for winner in winners:
+            turtle_color = winner.pencolor()
+            winner_colors.append(turtle_color)
+            print(f"Winner{winners.index(winner) + 1}: {turtle_color} turtle.")
+            bet_result()
+
 screen.exitonclick()
+
