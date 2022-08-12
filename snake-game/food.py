@@ -12,10 +12,8 @@ class Food(Turtle):
         self.shapesize(stretch_wid=0.5, stretch_len=0.5)
         self.penup()
         self.refresh()
-        self.score = 0
 
     def refresh(self):
         random_x = random.randint(-280, 280)
         random_y = random.randint(-280, 280)
         self.goto(random_x, random_y)
-        self.score += 1

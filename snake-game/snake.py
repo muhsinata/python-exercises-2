@@ -25,11 +25,13 @@ class Snake:
             self.coordinate_x -= 20
             self.square_list.append(square)
 
-    def start_game(self, food_obj):
+    def start_game(self, food_obj, scoreboard):
 
         while self.keep_playing:
+
             t.Screen().update()
             time.sleep(0.1)
+
             for square_num in range(len(self.square_list) - 1, 0, -1):
                 new_x = self.square_list[square_num - 1].xcor()
                 new_y = self.square_list[square_num - 1].ycor()
@@ -44,6 +46,9 @@ class Snake:
 
             if self.head.distance(food_obj) < 15:
                 food_obj.refresh()
+                scoreboard.clear()
+                scoreboard.score += 1
+                scoreboard.score_screen()
 
     def move_up(self):
         if self.head.heading() != 270:
