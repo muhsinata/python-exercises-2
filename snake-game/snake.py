@@ -25,7 +25,7 @@ class Snake:
             self.coordinate_x -= 20
             self.square_list.append(square)
 
-    def start_game(self):
+    def start_game(self, food_obj):
 
         while self.keep_playing:
             t.Screen().update()
@@ -42,6 +42,9 @@ class Snake:
             self.screen.onkey(self.move_down, "Down")
             self.screen.onkey(self.move_up, "Up")
 
+            if self.head.distance(food_obj) < 15:
+                food_obj.refresh()
+
     def move_up(self):
         if self.head.heading() != 270:
             self.head.setheading(90)
@@ -57,3 +60,4 @@ class Snake:
     def move_left(self):
         if self.head.heading() != 0:
             self.head.setheading(180)
+
