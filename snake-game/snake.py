@@ -49,10 +49,18 @@ class Snake:
                 scoreboard.clear()
                 scoreboard.score += 1
                 scoreboard.score_screen()
+                self.coordinate_x = self.square_list[-1].xcor()
+                self.coordinate_y = self.square_list[-1].ycor()
+                self.create_squares(1)
 
             if self.head.xcor() < -290 or self.head.xcor() > 290 or self.head.ycor() < -290 or self.head.ycor() > 290:
                 self.keep_playing = False
                 scoreboard.game_over()
+
+            for square in self.square_list[1:]:
+                if self.head.distance(square) < 10:
+                    self.keep_playing = False
+                    scoreboard.game_over()
 
     def move_up(self):
         if self.head.heading() != 270:
