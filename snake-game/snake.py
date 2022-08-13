@@ -50,6 +50,10 @@ class Snake:
                 scoreboard.score += 1
                 scoreboard.score_screen()
 
+            if self.head.xcor() < -290 or self.head.xcor() > 290 or self.head.ycor() < -290 or self.head.ycor() > 290:
+                self.keep_playing = False
+                scoreboard.game_over()
+
     def move_up(self):
         if self.head.heading() != 270:
             self.head.setheading(90)
