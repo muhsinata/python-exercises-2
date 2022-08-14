@@ -1,4 +1,5 @@
 import turtle
+import time
 
 SCORE_COLOR = "black"
 FONT = ("Arial", 60, "normal")
@@ -13,11 +14,13 @@ class Scoreboard:
         self.computer_y_coordinate = 150
         self.user_score = 0
         self.computer_score = 0
+        self.sleep()
         self.user_score_turtle = turtle.Turtle()
         self.user_score_turtle.hideturtle()
         self.user_score_turtle.color("white")
         self.user_score_turtle.speed("fastest")
         self.user_score_turtle.penup()
+        self.sleep()
         self.computer_score_turtle = turtle.Turtle()
         self.computer_score_turtle.hideturtle()
         self.computer_score_turtle.color("white")
@@ -33,3 +36,6 @@ class Scoreboard:
     def scores(self):
         self.user_score_turtle.write(arg=self.user_score, align="center", font=FONT)
         self.computer_score_turtle.write(arg=self.computer_score, align="center", font=FONT)
+
+    def sleep(self):
+        time.sleep(0.2)
