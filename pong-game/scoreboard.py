@@ -14,15 +14,15 @@ class Scoreboard:
         self.user_score = 0
         self.computer_score = 0
         self.user_score_turtle = turtle.Turtle()
+        self.user_score_turtle.hideturtle()
         self.user_score_turtle.color("white")
         self.user_score_turtle.speed("fastest")
         self.user_score_turtle.penup()
-        self.user_score_turtle.hideturtle()
         self.computer_score_turtle = turtle.Turtle()
+        self.computer_score_turtle.hideturtle()
         self.computer_score_turtle.color("white")
         self.computer_score_turtle.speed("fastest")
         self.computer_score_turtle.penup()
-        self.computer_score_turtle.hideturtle()
         self.score_places()
         self.scores()
 
