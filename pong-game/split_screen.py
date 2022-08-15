@@ -1,12 +1,8 @@
 import turtle
-import time
 
 SCREEN_WIDTH = 800
 SCREEN_HEIGHT = 500
 
-sleep_turtle = turtle.Screen()
-
-time.sleep(0.2)
 screen_divider = turtle.Turtle()
 screen_divider.hideturtle()
 screen_divider.speed("fastest")
