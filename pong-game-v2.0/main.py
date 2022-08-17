@@ -1,5 +1,7 @@
 from turtle import Screen
 from paddle import Paddle
+from ball import Ball
+import time
 
 SCREEN_WIDTH = 800
 SCREEN_HEIGHT = 600
@@ -7,6 +9,7 @@ SCREEN_HEIGHT = 600
 screen = Screen()
 r_paddle = Paddle(350, 0)
 l_paddle = Paddle(-350, 0)
+ball = Ball()
 
 screen.setup(width=SCREEN_WIDTH, height=SCREEN_HEIGHT)
 screen.bgcolor("black")
@@ -24,8 +27,8 @@ play_game = True
 while play_game:
 
     screen.update()
-
-
+    time.sleep(0.001)
+    ball.move_ball()
 
 
 
