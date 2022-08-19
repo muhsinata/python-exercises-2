@@ -11,6 +11,7 @@ class CarManager(Turtle):
     def __init__(self):
         super().__init__()
         self.car_list = []
+        self.hideturtle()
 
     def create_car(self):
 
