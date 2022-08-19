@@ -13,7 +13,9 @@ class CarManager(Turtle):
         self.car_list = []
 
     def create_car(self):
+
         car_frequency = random.randint(1, 6)
+
         if car_frequency == 1:
             new_car = Turtle()
             new_car.color(random.choice(COLORS))
