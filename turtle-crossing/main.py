@@ -27,7 +27,9 @@ while game_is_on:
 
     for car in car_manager.car_list:
         if player.distance(car) < 20:
-            print("Game Over")
+            game_is_on = False
+
+screen.exitonclick()
 
 
 
