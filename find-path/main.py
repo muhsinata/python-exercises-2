@@ -6,3 +6,6 @@
 #Hint1: This method will help you: https://www.w3schools.com/python/ref_file_readlines.asp
     #Hint2: This method will also help you: https://www.w3schools.com/python/ref_string_replace.asp
         #Hint3: THis method will help you: https://www.w3schools.com/python/ref_string_strip.asp
+
+with open("C:/Users/MSI/PycharmProjects/python-exercises-2/find-path/Input/Names/invited_names.txt", "r") as names:
+    name_list = names.read().splitlines()
