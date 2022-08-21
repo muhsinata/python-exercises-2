@@ -15,4 +15,5 @@ data = pandas.read_csv("weather_data.csv")
 temp_data = data["temp"].to_list()
 average_temp = data["temp"].mean()
 max_temp = data["temp"].max()
-print(max_temp)
+
+max_temp_row = data[data.temp == data.temp.max()]
