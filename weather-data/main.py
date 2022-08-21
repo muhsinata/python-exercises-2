@@ -17,3 +17,6 @@ average_temp = data["temp"].mean()
 max_temp = data["temp"].max()
 
 max_temp_row = data[data.temp == data.temp.max()]
+
+monday = data[data.day == "Monday"]
+monday_temp = int(monday.temp)
