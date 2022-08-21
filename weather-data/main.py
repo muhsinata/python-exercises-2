@@ -12,4 +12,5 @@
 import pandas
 
 data = pandas.read_csv("weather_data.csv")
-print(data["temp"])
+temp_data = data["temp"].to_list()
+
