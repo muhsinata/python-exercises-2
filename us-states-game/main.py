@@ -46,8 +46,5 @@ while keep_guessing:
         write_states.find_state(state_x, state_y)
         write_states.write_state_name(answer_state)
 
-
-
-
-
 screen.exitonclick()
+
