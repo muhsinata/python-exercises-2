@@ -9,6 +9,7 @@ class WriteState(Turtle):
         super().__init__()
         self.hideturtle()
         self.penup()
+        self.speed("fastest")
 
     def find_state(self, x, y):
         self.goto(x, y)

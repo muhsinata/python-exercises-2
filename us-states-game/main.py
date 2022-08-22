@@ -13,7 +13,9 @@ data = pandas.read_csv("50_states.csv")
 
 right_guesses = 0
 keep_guessing = True
+all_states = data.state.to_list()
 guessed_states = []
+unguessed_states = list(set(all_states) - set(guessed_states))
 
 while keep_guessing:
 
@@ -21,6 +23,16 @@ while keep_guessing:
     answer_check = data[data.state == answer_state].empty
 
     if answer_state == "Exit":
+
+        for state in unguessed_states:
+
+            unguessed_state_row = data[data.state == state]
+            state_x = int(unguessed_state_row.x)
+            state_y = int(unguessed_state_row.y)
+
+            write_states.find_state(state_x, state_y)
+            write_states.write_state_name(state)
+
         break
 
     if not answer_check:
