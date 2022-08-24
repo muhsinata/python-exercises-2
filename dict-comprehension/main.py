@@ -26,7 +26,14 @@ import pandas
 data_as_df = pandas.read_csv("nato_phonetic_alphabet.csv")
 data_as_dict = {row.letter: row.code for (index, row) in data_as_df.iterrows()}
 
+user_word_uppercase = input("Type the word: ").upper()
+word_letters = list(user_word_uppercase)
+code_of_letters = []
 
+for letter in word_letters:
+    code_of_letters.append(data_as_dict[letter])
+
+print(code_of_letters)
 
 
 
